@@ -1,16 +1,24 @@
 class Agtok < Formula
   desc "AI Agent Token Control (TUI + CLI)"
   homepage "https://github.com/vaspike/agtok"
-  # Uncomment and update when you cut a release:
-  # url "https://github.com/vaspike/agtok/archive/refs/tags/v0.2.0.tar.gz"
-  # sha256 "<REPLACE_WITH_TARBALL_SHA256>"
+  version "0.1.1"
+
+  on_macos do
+    on_intel do
+      url "https://github.com/vaspike/agtok/releases/download/0.1.1/agtok-v0.1.1-darwin-amd64.tar.gz"
+      sha256:9ba794c830571373ab8c23c9ef4e1cf51e94d615b01890310ec95033108f8c1e
+    end
+    on_arm do
+      url "https://github.com/vaspike/agtok/releases/download/0.1.1/agtok-v0.1.1-darwin-arm64.tar.gz"
+      sha256:03114271c847ef5edc9aa77d0d6316b3c3cab1ca7473000e268019a2a7e48345
+    end
+  end
+
   head "https://github.com/vaspike/agtok.git", branch: "main"
 
-  depends_on "go" => :build
-
   def install
-    ldflags = "-s -w -X tks/internal/version.Version=#{version}"
-    system "go", "build", "-trimpath", "-ldflags", ldflags, "-o", bin/"agtok", "./cmd/agtok"
+    # Prebuilt tarballs contain a single executable named 'agtok'
+    bin.install "agtok"
   end
 
   test do
