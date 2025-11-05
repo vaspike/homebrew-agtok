@@ -1,16 +1,16 @@
 class Agtok < Formula
   desc "AI Agent Token Control (TUI + CLI)"
   homepage "https://github.com/vaspike/agtok"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
     on_intel do
       url "https://github.com/vaspike/agtok/releases/download/#{version}/agtok-v#{version}-darwin-amd64.tar.gz"
-      sha256 "ad2f6913980ff3c0072b48f42eab4223c56b9eaf0fb88a2d9edc7799edd39757"
+      sha256 "d33ad6907e752e6e9629b18a097b5b1498790744c69323ece6cf61340034ee4a"
     end
     on_arm do
       url "https://github.com/vaspike/agtok/releases/download/#{version}/agtok-v#{version}-darwin-arm64.tar.gz"
-      sha256 "8a4fe28461cc8b6957d3e982cfcf03587d8b3f5695a450d875a9647ba0c2c85b"
+      sha256 "5b2dbeaeefe0269b840d9c5d9fbf90b7a2ef07a989f355a4b4056b5dc7ec4eca"
     end
   end
 
